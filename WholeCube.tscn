@@ -1,0 +1,175 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Cube.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/yellow.material" type="Material" id=2]
+[ext_resource path="res://assets/white.material" type="Material" id=3]
+[ext_resource path="res://assets/red.material" type="Material" id=4]
+[ext_resource path="res://assets/blue.material" type="Material" id=5]
+[ext_resource path="res://assets/green.material" type="Material" id=6]
+[ext_resource path="res://assets/orange.material" type="Material" id=7]
+
+[node name="WholeCube" type="Spatial"]
+
+[node name="Centers" type="Spatial" parent="."]
+
+[node name="White" parent="Centers" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, 1, 0 )
+skeleton = NodePath("../..")
+material/2 = ExtResource( 3 )
+
+[node name="Yellow" parent="Centers" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, -1, 0 )
+skeleton = NodePath("../..")
+material/3 = ExtResource( 2 )
+
+[node name="Blue" parent="Centers" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, -1, 0, 0 )
+skeleton = NodePath("../..")
+material/4 = ExtResource( 5 )
+
+[node name="Red" parent="Centers" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, 0, -1 )
+skeleton = NodePath("../..")
+material/1 = ExtResource( 4 )
+
+[node name="Green" parent="Centers" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 1, 0, 0 )
+skeleton = NodePath("../..")
+material/5 = ExtResource( 6 )
+
+[node name="Green2" parent="Centers" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, 0, 1 )
+skeleton = NodePath("../..")
+material/6 = ExtResource( 7 )
+
+[node name="Sides" type="Spatial" parent="."]
+
+[node name="WhiteGreen" parent="Sides" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 1, 1, 0 )
+skeleton = NodePath("../..")
+material/2 = ExtResource( 3 )
+material/5 = ExtResource( 6 )
+
+[node name="WhiteOrange" parent="Sides" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, 1, 1 )
+skeleton = NodePath("../..")
+material/2 = ExtResource( 3 )
+material/6 = ExtResource( 7 )
+
+[node name="WhiteBlue" parent="Sides" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, -1, 1, 0 )
+skeleton = NodePath("../..")
+material/2 = ExtResource( 3 )
+material/4 = ExtResource( 5 )
+
+[node name="WhiteRed" parent="Sides" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, 1, -1 )
+skeleton = NodePath("../..")
+material/1 = ExtResource( 4 )
+material/2 = ExtResource( 3 )
+
+[node name="YellowGreen" parent="Sides" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 1, -1, 0 )
+skeleton = NodePath("../..")
+material/3 = ExtResource( 2 )
+material/5 = ExtResource( 6 )
+
+[node name="YellowOrange" parent="Sides" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, -1, 1 )
+skeleton = NodePath("../..")
+material/3 = ExtResource( 2 )
+material/6 = ExtResource( 7 )
+
+[node name="YellowBlue" parent="Sides" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, -1, -1, 0 )
+skeleton = NodePath("../..")
+material/3 = ExtResource( 2 )
+material/4 = ExtResource( 5 )
+
+[node name="YellowRed" parent="Sides" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, -1, -1 )
+skeleton = NodePath("../..")
+material/1 = ExtResource( 4 )
+material/3 = ExtResource( 2 )
+
+[node name="OrangeBlue" parent="Sides" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, -1, 0, 1 )
+skeleton = NodePath("../..")
+material/4 = ExtResource( 5 )
+material/6 = ExtResource( 7 )
+
+[node name="OrangeGreen" parent="Sides" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 1, 0, 1 )
+skeleton = NodePath("../..")
+material/5 = ExtResource( 6 )
+material/6 = ExtResource( 7 )
+
+[node name="RedGreen" parent="Sides" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 1, 0, -1 )
+skeleton = NodePath("../..")
+material/1 = ExtResource( 4 )
+material/5 = ExtResource( 6 )
+
+[node name="RedBlue" parent="Sides" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, -1, 0, -1 )
+skeleton = NodePath("../..")
+material/1 = ExtResource( 4 )
+material/4 = ExtResource( 5 )
+
+[node name="Corners" type="Spatial" parent="."]
+
+[node name="WhiteGreenRed" parent="Corners" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 1, 1, -1 )
+skeleton = NodePath("../..")
+material/1 = ExtResource( 4 )
+material/2 = ExtResource( 3 )
+material/5 = ExtResource( 6 )
+
+[node name="WhiteBlueRed" parent="Corners" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, -1, 1, -1 )
+skeleton = NodePath("../..")
+material/1 = ExtResource( 4 )
+material/2 = ExtResource( 3 )
+material/4 = ExtResource( 5 )
+
+[node name="WhiteBlueOrange" parent="Corners" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, -1, 1, 1 )
+skeleton = NodePath("../..")
+material/2 = ExtResource( 3 )
+material/4 = ExtResource( 5 )
+material/6 = ExtResource( 7 )
+
+[node name="WhiteGreenOrange" parent="Corners" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 1, 1, 1 )
+skeleton = NodePath("../..")
+material/2 = ExtResource( 3 )
+material/5 = ExtResource( 6 )
+material/6 = ExtResource( 7 )
+
+[node name="YellowGreenOrange" parent="Corners" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 1, -1, 1 )
+skeleton = NodePath("../..")
+material/3 = ExtResource( 2 )
+material/5 = ExtResource( 6 )
+material/6 = ExtResource( 7 )
+
+[node name="YellowBlueOrange" parent="Corners" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, -1, -1, 1 )
+skeleton = NodePath("../..")
+material/3 = ExtResource( 2 )
+material/4 = ExtResource( 5 )
+material/6 = ExtResource( 7 )
+
+[node name="YellowGreenRed" parent="Corners" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 1, -1, -1 )
+skeleton = NodePath("../..")
+material/1 = ExtResource( 4 )
+material/3 = ExtResource( 2 )
+material/5 = ExtResource( 6 )
+
+[node name="YellowBlueRed" parent="Corners" instance=ExtResource( 1 )]
+transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, -1, -1, -1 )
+skeleton = NodePath("../..")
+material/1 = ExtResource( 4 )
+material/3 = ExtResource( 2 )
+material/4 = ExtResource( 5 )
