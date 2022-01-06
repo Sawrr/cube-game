@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/DraggableArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/WholeCube.tscn" type="PackedScene" id=2]
 
 [node name="TestDragScene" type="Spatial"]
+
+[node name="WholeCube" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.702178, -0.365619, 0.610957, 0, 0.858084, 0.513509, -0.712002, -0.360575, 0.602528, 3.32137, 2.79161, 3.27554 )
