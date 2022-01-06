@@ -10,6 +10,9 @@ var drag_start_axis: int
 func _round_vector(vec: Vector3, amount: float) -> Vector3:
 	return Vector3(stepify(vec.x, amount), stepify(vec.y, amount), stepify(vec.z, amount))
 
+func _max_axis(vec: Vector3):
+	return Vector3(abs(vec.x), abs(vec.y), abs(vec.z)).max_axis()
+
 func _on_Area_input_event(camera, event: InputEventMouse, position, normal, shape_idx):
 	var rounded_pos = _round_vector(position, 0.01)
 
@@ -23,7 +26,7 @@ func _on_Area_input_event(camera, event: InputEventMouse, position, normal, shap
 
 		if dragging:
 			# check for changing sides of cube
-			if drag_start_axis != normal.max_axis():
+			if drag_start_axis != _max_axis(normal):
 				dragging = false
 				print("ended drag by changing sides")
 
@@ -40,7 +43,8 @@ func _on_Area_input_event(camera, event: InputEventMouse, position, normal, shap
 
 			if diff_vec2.length() > DRAG_DISTANCE:
 				# ignore if angle was not mostly straight
-				if abs(diff_vec2.angle_to(Vector2(1, 1))) < DRAG_ANGLE:
+				var abs_diff_vec2 = Vector2(abs(diff_vec2.x), abs(diff_vec2.y))
+				if abs(abs_diff_vec2.angle_to(Vector2(1, 1))) < DRAG_ANGLE:
 					dragging = false
 					print("ended drag, drag was not straight")
 				else:
@@ -70,7 +74,7 @@ func _on_Area_input_event(camera, event: InputEventMouse, position, normal, shap
 
 				dragging = true
 				drag_start_pos = rounded_pos
-				drag_start_axis = normal.max_axis()
+				drag_start_axis = _max_axis(normal)
 
 				print("began drag")
 			else:
