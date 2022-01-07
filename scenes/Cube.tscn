@@ -1,6 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/black.material" type="Material" id=1]
+[ext_resource path="res://scenes/Cube.gd" type="Script" id=2]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "rubiks-cube_Cube001"
@@ -82,15 +83,6 @@ surfaces/6 = {
 "vertex_count": 84
 }
 
-[sub_resource type="GDScript" id=2]
-script/source = "extends MeshInstance
-
-var correct_transform: Transform
-
-func _ready():
-	correct_transform = self.transform
-"
-
 [node name="Cube" type="MeshInstance"]
 transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, 0, 0 )
 mesh = SubResource( 1 )
@@ -101,4 +93,4 @@ material/3 = ExtResource( 1 )
 material/4 = ExtResource( 1 )
 material/5 = ExtResource( 1 )
 material/6 = ExtResource( 1 )
-script = SubResource( 2 )
+script = ExtResource( 2 )

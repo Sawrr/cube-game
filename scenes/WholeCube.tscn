@@ -37,7 +37,7 @@ transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 1, 0, 0 )
 skeleton = NodePath("../..")
 material/5 = ExtResource( 6 )
 
-[node name="Green2" parent="Centers" instance=ExtResource( 1 )]
+[node name="Orange" parent="Centers" instance=ExtResource( 1 )]
 transform = Transform( 0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, 0, 1 )
 skeleton = NodePath("../..")
 material/6 = ExtResource( 7 )
@@ -173,3 +173,5 @@ skeleton = NodePath("../..")
 material/1 = ExtResource( 4 )
 material/3 = ExtResource( 2 )
 material/4 = ExtResource( 5 )
+
+[node name="Rotator" type="Spatial" parent="."]

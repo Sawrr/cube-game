@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/WholeCube.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/DraggableArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/WholeCube.gd" type="Script" id=3]
 
 [node name="Main" type="Spatial"]
 
 [node name="DraggableArea" parent="." instance=ExtResource( 2 )]
 
 [node name="WholeCube" parent="." instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -0.885819, 0.222468, -0.407225, 0, 0.877583, 0.479425, 0.46403, 0.424684, -0.77738, -4.09941, 4.82623, -7.82564 )
+
+[connection signal="drag" from="DraggableArea" to="WholeCube" method="rotate_cubes"]
