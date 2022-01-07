@@ -1,5 +1,7 @@
 extends Area
 
+signal drag
+
 const DRAG_DISTANCE = 1.0
 const DRAG_ANGLE = PI/8
 
@@ -49,6 +51,21 @@ func _on_Area_input_event(camera, event: InputEventMouse, position, normal, shap
 					print("ended drag, drag was not straight")
 				else:
 					dragging = false
+
+					var diff_vector  = rounded_pos - drag_start_pos
+					var max_axis = _max_axis(diff_vector)
+					var drag_vector = Vector3()
+					drag_vector[max_axis] = 1 if diff_vector[max_axis] > 0 else -1
+
+					var normal_vector = Vector3()
+					normal_vector[drag_start_axis] = 1 if drag_start_pos[drag_start_axis] > 0 else -1
+
+					var rotation_axis_vector = normal_vector.cross(drag_vector)
+					var rotating_group_vector = rotation_axis_vector.abs()
+					rotating_group_vector *= 1 if drag_start_pos[_max_axis(rotation_axis_vector)] > 0 else -1
+
+					emit_signal("drag", rotation_axis_vector, rotating_group_vector)
+
 					print("full drag completed")
 
 	elif event.is_class("InputEventMouseButton"):
