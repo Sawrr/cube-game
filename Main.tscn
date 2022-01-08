@@ -1,43 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/WholeCube.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/DraggableArea.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/WholeCube.gd" type="Script" id=3]
 [ext_resource path="res://scenes/RotatingCamera.tscn" type="PackedScene" id=4]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Spatial
-
-var rotating = false
-var camera_rotate_pos: Vector2
-
-func _input(event):
-	if event.is_class(\"InputEventMouseMotion\"):
-		var e = event as InputEventMouseMotion
-		if rotating:
-			var diff_pos = e.position - camera_rotate_pos
-			# rotate camera based on motion
-			print(diff_pos)
-			camera_rotate_pos = e.position
-	elif event.is_class(\"InputEventMouseButton\"):
-		var e = event as InputEventMouseButton
-		if e.button_index == BUTTON_MIDDLE:
-			if e.pressed:
-				print(\"pressed middle\")
-				camera_rotate_pos = e.position
-				rotating = true
-			else:
-				rotating = false
-				print(\"released middle\")
-"
-
 [node name="Main" type="Spatial"]
-script = SubResource( 1 )
 
 [node name="DraggableArea" parent="." instance=ExtResource( 2 )]
 
 [node name="WholeCube" parent="." instance=ExtResource( 1 )]
-script = ExtResource( 3 )
 
 [node name="RotatingCamera" parent="." instance=ExtResource( 4 )]
 

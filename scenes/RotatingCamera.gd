@@ -1,6 +1,6 @@
 extends Spatial
 
-const PIXEL_TO_ROTATION = 100.0
+const PIXEL_TO_ROTATION = 125.0
 
 var rotating = false
 var mouse_screen_pos: Vector2

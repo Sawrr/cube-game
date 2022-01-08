@@ -2,7 +2,7 @@ extends Spatial
 
 signal animation_done
 
-const ROTATION_TIME = 0.4
+const ROTATION_TIME = 0.3
 
 var animating = false
 var anim_time_counter = 0
