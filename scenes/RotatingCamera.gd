@@ -15,7 +15,7 @@ func _input(event):
 			var yaw = diff_pos.x / PIXEL_TO_ROTATION
 			var pitch = -diff_pos.y / PIXEL_TO_ROTATION
 			transform = transform.rotated(Vector3.UP, yaw)
-			transform = transform.rotated(transform.basis.xform(Vector3.RIGHT), pitch)
+			transform = transform.rotated(transform.basis.xform(Vector3.RIGHT).normalized(), pitch)
 
 			# reset current screen position
 			mouse_screen_pos = e.position
