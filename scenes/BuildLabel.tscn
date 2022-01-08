@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/BuildLabel.gd" type="Script" id=1]
+
+[node name="BuildLabel" type="RichTextLabel"]
+margin_left = 10.0
+margin_top = 578.0
+margin_right = 404.0
+margin_bottom = 598.0
+text = "build ID"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
