@@ -6,7 +6,7 @@
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 398.0
-margin_bottom = 24.0
+margin_bottom = 67.0
 text = "build ID"
 script = ExtResource( 1 )
 __meta__ = {
