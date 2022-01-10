@@ -3,8 +3,8 @@
 [ext_resource path="res://scenes/BuildLabel.gd" type="Script" id=1]
 
 [node name="BuildLabel" type="RichTextLabel"]
-margin_left = 4.0
-margin_top = 4.0
+margin_left = 5.0
+margin_top = 5.0
 margin_right = 398.0
 margin_bottom = 24.0
 text = "build ID"
