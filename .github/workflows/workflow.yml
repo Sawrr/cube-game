@@ -21,6 +21,7 @@ jobs:
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Set build id
         run: |
+          rm build_id.txt
           echo "build.${{ github.ref_name }}.${{ github.run_number }}" > build_id.txt
       - name: Web Build
         run: |
