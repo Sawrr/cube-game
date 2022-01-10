@@ -5,9 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     container: barichello/godot-ci:3.4.2
     steps:
-      - name: build
-        uses: actions/checkout@v2
-        run: ls .
-        run: godot --export "HTML5"
-        run: ls .
-        run: ls ./build/
+      - uses: actions/checkout@v2
+      - run: ls .
+      - run: godot --export "HTML5"
+      - run: ls .
+      - run: ls ./build/
