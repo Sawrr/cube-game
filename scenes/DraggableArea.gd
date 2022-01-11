@@ -30,7 +30,6 @@ func _on_Area_input_event(camera, event: InputEventMouse, position, normal, shap
 			# check for changing sides of cube
 			if drag_start_axis != _max_axis(normal):
 				dragging = false
-				print("ended drag by changing sides")
 
 			# check for sufficient drag distance
 			var start_coords = []
@@ -48,7 +47,6 @@ func _on_Area_input_event(camera, event: InputEventMouse, position, normal, shap
 				var abs_diff_vec2 = Vector2(abs(diff_vec2.x), abs(diff_vec2.y))
 				if abs(abs_diff_vec2.angle_to(Vector2(1, 1))) < DRAG_ANGLE:
 					dragging = false
-					print("ended drag, drag was not straight")
 				else:
 					dragging = false
 
@@ -65,8 +63,6 @@ func _on_Area_input_event(camera, event: InputEventMouse, position, normal, shap
 					rotating_group_vector *= 1 if drag_start_pos[_max_axis(rotation_axis_vector)] > 0 else -1
 
 					emit_signal("drag", rotation_axis_vector, rotating_group_vector)
-
-					print("full drag completed")
 
 	elif event.is_class("InputEventMouseButton"):
 		var e = event as InputEventMouseButton
@@ -86,20 +82,15 @@ func _on_Area_input_event(camera, event: InputEventMouse, position, normal, shap
 					if abs(rounded_pos[i]) < 0.5:
 						center_count += 1
 				if side_count != 1 or center_count > 1:
-					print("too close to center or corner")
 					return
 
 				dragging = true
 				drag_start_pos = rounded_pos
 				drag_start_axis = _max_axis(normal)
-
-				print("began drag")
 			else:
 				if dragging:
 					dragging = false
-					print("ended drag by releasing")
 
 func _on_Area_mouse_exited():
 	if dragging:
 		dragging = false
-		print("ended drag by leaving bounds")
